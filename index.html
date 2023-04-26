@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.min.js" defer integrity="sha512-06NZg89vaTNvnFgFTqi/dJKFadQ6FIglD6Yg1HHWAUtVFFoXli9BZL4q4EO1UTKpOfCfW5ws2Z6gw49Swsilsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./scripts/main.js" defer></script>
+    <link rel="stylesheet" href="./styles/global.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Conversor de Moedas</h1>
+        </header>
+            <div>
+                <select name="moeda-primaria" id="moeda-primaria">
+                    <option value="BRL">BRL - Real Brasileiro</option>
+                    <option value="USD">USD - Dolar Americano</option>
+                    <option value="CAD">CAD - Dolar Canadense</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="AUD">AUD - Dólar Australiano</option>
+                    <option value="CNY">CNY - Yuan Chinês</option>
+                    <option value="ILS">ILS - Novo Shekel Israelense</option>
+                    <option value="ETH">ETH - Ethereum</option>
+                    <option value="GBP">GBP - Libra Esterlina</option>
+                    <option value="ARS">ARS - Peso Argentino</option>
+                    <option value="JPY">JPY - Iene Japonês</option>
+                    <option value="CNY">CNY - Yuan Chinês</option>
+                    <option value="BTC">BTC - Bitcoin</option>
+                    <option value="DOGE">DOGE - Dogecoin</option>
+                    <option value="PYG">PYG - Guarani Paraguaio</option>
+                    <input type="text" placeholder="Valor" id="valoraserconvertido">
+                </select>
+                <select name="moeda-secundaria" id="moeda-secundaria">
+                    <option selected></option>
+                    <option value="BRL" >BRL - Real Brasileiro</option>
+                    <option value="USD">USD - Dolar Americano</option>
+                    <option value="CAD">CAD - Dolar Canadense</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="AUD">AUD - Dólar Australiano</option>
+                    <option value="CNY">CNY - Yuan Chinês</option>
+                    <option value="ILS">ILS - Novo Shekel Israelense</option>
+                    <option value="ETH">ETH - Ethereum</option>
+                    <option value="GBP">GBP - Libra Esterlina</option>
+                    <option value="ARS">ARS - Peso Argentino</option>
+                    <option value="JPY">JPY - Iene Japonês</option>
+                    <option value="CNY">CNY - Yuan Chinês</option>
+                    <option value="BTC">BTC - Bitcoin</option>
+                    <option value="DOGE">DOGE - Dogecoin</option>
+                    <option value="PYG">PYG - Guarani Paraguaio</option>
+                    <input type="text" id="resultado">
+                </select>
+            </div>
+    </main>
+</body>
+</html>
