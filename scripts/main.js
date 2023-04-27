@@ -4,40 +4,24 @@ const api = axios.create({
     baseURL: 'https://economia.awesomeapi.com.br/json/last/',
 })
 
-api.get(`${firstOptionValue}-${secondOptionValue}`)
-    .then((response) => {
-        const infos = response.data
-        console.log (infos.USDBRL.ask)
-    })
-    .catch(error => window.alert('Carregamento ocorreu de forma incorreta.'))
-
-//
-
 const moedas = document.querySelectorAll('select')
+const input = document.getElementById('resultado')
+const button = document.querySelector('button')
+const resultado = document.querySelector('#resultado')
 
-function moedaPrimaria(firstOption){
-    moedas[0].addEventListener('change', () => {
-        const moeda = moedas[0].value
-        firstOption = moeda
-    })
-    return firstOption
-}
-console.log(moedaSecundaria(firstOption))
+button.addEventListener('click', () => {
+    let inputValue = input.value
+    let origem = moedas[0].value
+    let destino = moedas[1].value
 
-function moedaSecundaria(secondOption){
-    moedas[1].addEventListener('change', () => {
-        const moeda = moedas[1].value
-        secondOption = moeda
-    })
-    return secondOption
-}
-console.log(moedaSecundaria(secondOption))
+    api.get(`/${origem}-${destino}`)
+    .then((response) => {
+        console.log(response.data.BRLUSD.ask)
+        
+        let calculo = inputValue * response.data.BRLUSD.ask
 
-function calcular() {
-    const input = document.getElementById('valoraserconvertido')
-    input.addEventListener('input', () => {
-        let inputValue = input.value.replace(',', '.')
-        console.log(inputValue)
+        console.log(calculo)
+        resultado.innerHTML= `${calculo}`
     })
-}
-calcular()
+    .catch(error => alert('Erro no servidor...'))
+})
