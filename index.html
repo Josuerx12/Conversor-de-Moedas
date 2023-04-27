@@ -16,7 +16,8 @@
             <h1>Conversor de Moedas</h1>
         </header>
             <div>
-                <select name="moeda-primaria" id="moeda-primaria">
+                <select name="moeda-primaria">
+                    <option value="" selected></option>
                     <option value="BRL">BRL - Real Brasileiro</option>
                     <option value="USD">USD - Dolar Americano</option>
                     <option value="CAD">CAD - Dolar Canadense</option>
@@ -34,8 +35,8 @@
                     <option value="PYG">PYG - Guarani Paraguaio</option>
                     <input type="text" placeholder="Valor" id="valoraserconvertido">
                 </select>
-                <select name="moeda-secundaria" id="moeda-secundaria">
-                    <option selected></option>
+                <select name="moeda-secundaria">
+                    <option value="" selected></option>
                     <option value="BRL" >BRL - Real Brasileiro</option>
                     <option value="USD">USD - Dolar Americano</option>
                     <option value="CAD">CAD - Dolar Canadense</option>
@@ -51,7 +52,7 @@
                     <option value="BTC">BTC - Bitcoin</option>
                     <option value="DOGE">DOGE - Dogecoin</option>
                     <option value="PYG">PYG - Guarani Paraguaio</option>
-                    <input type="text" id="resultado">
+                    <input type="text" id="resultado" disabled>
                 </select>
             </div>
     </main>

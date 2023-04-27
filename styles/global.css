@@ -43,9 +43,8 @@ header {
 }
 
 
-#moeda-primaria,
-#moeda-secundaria {
-    width: 60px;
+select {
+    width: 70px;
     height: 30px;
     font-size: 1.2rem;
     padding-left: .3rem;
