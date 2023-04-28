@@ -15,47 +15,15 @@
         <header>
             <h1>Conversor de Moedas</h1>
         </header>
-            <div>
-                <select name="moeda-primaria">
-                    <option value="" selected></option>
-                    <option value="BRL">BRL - Real Brasileiro</option>
-                    <option value="USD">USD - Dolar Americano</option>
-                    <option value="CAD">CAD - Dolar Canadense</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="AUD">AUD - Dólar Australiano</option>
-                    <option value="CNY">CNY - Yuan Chinês</option>
-                    <option value="ILS">ILS - Novo Shekel Israelense</option>
-                    <option value="ETH">ETH - Ethereum</option>
-                    <option value="GBP">GBP - Libra Esterlina</option>
-                    <option value="ARS">ARS - Peso Argentino</option>
-                    <option value="JPY">JPY - Iene Japonês</option>
-                    <option value="CNY">CNY - Yuan Chinês</option>
-                    <option value="BTC">BTC - Bitcoin</option>
-                    <option value="DOGE">DOGE - Dogecoin</option>
-                    <option value="PYG">PYG - Guarani Paraguaio</option>
+            <div id="mostrar">
+                <select name="moeda-primaria" id="moeda1">
                     <input type="text" placeholder="Valor" id="valoraserconvertido">
                 </select>
-                <select name="moeda-secundaria">
-                    <option value="" selected></option>
-                    <option value="BRL" >BRL - Real Brasileiro</option>
-                    <option value="USD">USD - Dolar Americano</option>
-                    <option value="CAD">CAD - Dolar Canadense</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="AUD">AUD - Dólar Australiano</option>
-                    <option value="CNY">CNY - Yuan Chinês</option>
-                    <option value="ILS">ILS - Novo Shekel Israelense</option>
-                    <option value="ETH">ETH - Ethereum</option>
-                    <option value="GBP">GBP - Libra Esterlina</option>
-                    <option value="ARS">ARS - Peso Argentino</option>
-                    <option value="JPY">JPY - Iene Japonês</option>
-                    <option value="CNY">CNY - Yuan Chinês</option>
-                    <option value="BTC">BTC - Bitcoin</option>
-                    <option value="DOGE">DOGE - Dogecoin</option>
-                    <option value="PYG">PYG - Guarani Paraguaio</option>
+                <select name="moeda-secundaria" id="moeda2">
                     <input type="text" id="resultado" disabled>
                 </select>
             </div>
-            <button>Converter</button>
+            <button class="btn">Converter</button>
     </main>
 </body>
 </html>

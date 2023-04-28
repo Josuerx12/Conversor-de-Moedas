@@ -1,27 +1,46 @@
-// // Axios
+const urlMoedas = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/Moedas?$top=200&$skip=0&$format=json&$select=simbolo,nomeFormatado,tipoMoeda'
 
-const api = axios.create({
-    baseURL: 'https://economia.awesomeapi.com.br/json/last/',
-})
+//variaveis globais do documento
+const moedasSelect = document.querySelectorAll('select')
+const btn = document.querySelector('.btn')
 
-const moedas = document.querySelectorAll('select')
-const input = document.getElementById('resultado')
-const button = document.querySelector('button')
-const resultado = document.querySelector('#resultado')
-
-button.addEventListener('click', () => {
-    let inputValue = input.value
-    let origem = moedas[0].value
-    let destino = moedas[1].value
-
-    api.get(`/${origem}-${destino}`)
-    .then((response) => {
-        console.log(response.data.BRLUSD.ask)
+async function listDeMoedas() {
+    await axios.get(urlMoedas)
+        .then((response) => {   
+            //variaveis globais da função
+            const values = response.data.value
+            console.log(values)
+            //event
+            document.addEventListener('load', showValues())
         
-        let calculo = inputValue * response.data.BRLUSD.ask
-
-        console.log(calculo)
-        resultado.innerHTML= `${calculo}`
+            function showValues() {
+                values.map((valores) => {
+                    const newHtml = `
+                        <option value="${valores.simbolo}">${valores.simbolo} - ${valores.nomeFormatado}</option>
+                    `
+                    moedasSelect[0].innerHTML += newHtml
+                    moedasSelect[1].innerHTML += newHtml
+                })
+            }
     })
-    .catch(error => alert('Erro no servidor...'))
+        .catch(error => console.error('Api não carregou!'))
+}
+listDeMoedas()
+
+btn.addEventListener('click', function calculator() {
+    const moedaOrigem = document.getElementById('moeda1')
+    const moedaDestino = document.getElementById('moeda2')
+    //axios create
+    let moedaOrigemValue = moedaOrigem.value
+    let moedaDestinoValue = moedaDestino.value
+    const api = axios.create ({
+        baseURL: 'https://api.apilayer.com/exchangerates_data/live?',
+        Headers: {'apikey': 'ukcHwJLTgc9KXOTt77cGXWMTTeDUHp2G'},
+    })
+        async function ValuesCurrency() {
+            await api.get(`convert?to=${moedaOrigemValue}&from=${moedaDestinoValue}&amount=${moedaDestinoValue}`)
+            .then((response) => console.log(response))
+            .catch(error => console.error(`Falhou carregamento dos valores das moedas`))
+        }
+    ValuesCurrency()
 })
